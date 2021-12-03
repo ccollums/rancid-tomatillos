@@ -1,4 +1,6 @@
 import "./Movies.css";
+import Card from './Card';
+import './Movies.js'
 
 const Movies = ({movies}) => {
 
@@ -6,6 +8,7 @@ const Movies = ({movies}) => {
       return (
           <Card
           image = {movie.poster_path}
+          key={movie.id}
           />
       )
   })
@@ -17,4 +20,4 @@ const Movies = ({movies}) => {
   )
 }
 
-export default Ideas;
+export default Movies;
