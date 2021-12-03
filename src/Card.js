@@ -1,14 +1,8 @@
 import './Card.css';
-import Preview from './Preview.js'
 
-const Card = ({ image, title, id }) => {
 
-  const movieDetails = (id) => {
-    return (
-    <Preview
-      key= {id}
-      />
-  )}
+
+const Card = ({ image, title, id, movieDetails }) => {
 
   return (
     <section className='card'>
