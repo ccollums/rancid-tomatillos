@@ -1,5 +1,6 @@
 import "./Movies.css";
 import Card from './Card';
+import Preview from './Preview.js'
 
 const Movies = ({movies, movieDetails}) => {
 
@@ -19,6 +20,7 @@ const Movies = ({movies, movieDetails}) => {
       <section className="movies-container">
           {moviePosters}
       </section>
+
   )
 }
 
