@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import movieData from './data.js';
+import { render } from 'react-dom';
+import Movies from './Movies.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: movieData.movies
+    }
+  }
+
+  addMovies = () => {
+    this.setState({movies: [...movieData.movies]})
+  }
+
+  render() {
+    return (
+      <main className='App'>
+        <h1>Rotten Tomatillos</h1>
+        <img className='logo' src="https://ih1.redbubble.net/image.754432836.2047/flat,750x,075,f-pad,750x1000,f8f8f8.u5.jpg" />
+            {/* /* <Form /> */}
+        <Movies movies={this.state.movies}/>
+      </main>
+    );
+  }
 }
-
 export default App;
