@@ -3,7 +3,29 @@
   width: 15%;
 }
 
+.magnify-glass {
+  height: 5%;
+  width: 6%;
+}
+
+h1 {
+  color: white;
+}
+
 html {
   background-image: linear-gradient(to right top, #1a191b, #2b2134, #3c294e, #4f3069, #643685, #6c3594, #7534a3, #7d32b3, #7729ba, #7020c2, #6615ca, #5a06d2);
   background-attachment: fixed;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-title {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0 1em 0
 }

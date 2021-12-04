@@ -15,6 +15,16 @@
   /* position: absolute; */
 }
 
+.play-button:hover {
+  transition: .5s ease-in-out;
+  transform: scale(1.2);
+}
+
+.x-icon:hover {
+  transition: .5s ease-in-out;
+  transform: scale(1.2);
+}
+
 .overlay {
   display: flex;
   flex-direction: row;

@@ -5,6 +5,11 @@ import { render } from 'react-dom';
 import Movies from './Movies.js';
 import Form from './Form.js';
 import Preview from './Preview.js'
+import tomato1 from './images/tomato1.svg';
+import tomato2 from './images/tomatos2.svg';
+import tomato3 from './images/tomato3.svg';
+import tomato4 from './images/tomato4.svg';
+import magnifyGlass from './images/grey-magnify-glass.svg'
 
 
 class App extends Component {
@@ -46,9 +51,15 @@ class App extends Component {
     return (
       <main className='App'>
         {this.state.movie && <Preview movie={this.state.movie}/>}
-        {!this.state.movie && <h1>Rotten Tomatillos</h1>}
-        {!this.state.movie && <img className='logo' src="https://ih1.redbubble.net/image.754432836.2047/flat,750x,075,f-pad,750x1000,f8f8f8.u5.jpg" />}
-        {!this.state.movie && <Form />}
+        {!this.state.movie &&
+          <section className='header'>
+            <section className='logo-title'>
+              <img className='logo' src={tomato3} />
+              <h1>Rotten Tomatillos</h1>
+            </section>
+            <img className='magnify-glass' src={magnifyGlass}/>
+            <Form />
+          </section>}
         {!this.state.movie && <Movies movies={this.state.movies} movieDetails={this.movieDetails}/>}
       </main>
     )

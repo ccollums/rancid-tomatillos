@@ -1,6 +1,6 @@
 import './Preview.css';
-import icon from './x-icon.svg';
-import playButton from './play-button.svg'
+import icon from './images/x-icon.svg';
+import playButton from './images/play-button.svg'
 
 const Preview = ({movie}) => {
 
