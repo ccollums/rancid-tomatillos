@@ -1,0 +1,69 @@
+.details-page {
+  color: white;
+}
+
+.backdrop-image {
+  width: 100vw;
+  height: 70vh;
+  position: relative;
+}
+
+.x-icon,
+.play-button {
+  height: 6em;
+  cursor: pointer;
+  /* position: absolute; */
+}
+
+.overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* position: absolute; */
+}
+
+.left-side-overlay {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3em;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  font-size: 3em;
+  margin: .5em 0 0 0;
+}
+
+h2 {
+  margin: .5em 0 .5em 0;
+}
+
+h4 {
+  margin: 0 4em 0 0
+}
+
+.trailer {
+  display: flex;
+  flex-direction: row;
+}
+
+.overview-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3em;
+}
+
+.bottom-details {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3em;
+}
+
+.rating {
+  font-size: 6em;
+  margin: 0 .5em 0 0;
+}

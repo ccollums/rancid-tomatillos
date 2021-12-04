@@ -6,6 +6,7 @@ import Movies from './Movies.js';
 import Form from './Form.js';
 import Preview from './Preview.js'
 
+
 class App extends Component {
   constructor() {
     super();
