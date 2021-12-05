@@ -2,6 +2,12 @@
   color: white;
 }
 
+.trailer-location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .backdrop-image {
   width: 100vw;
   height: 70vh;

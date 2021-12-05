@@ -59,14 +59,12 @@ class App extends Component {
 
 }
 
-//   searchMovies = event => {
-//     event.preventDefault();
-//     const filteredMovie = {
-//         this.props.state.movies.filter((movie) => {
-//           return movie.title === this.state.title;
-//         })
-//     }
-// }
+  searchMovies = (input) => {
+    const filteredMovie = this.state.movies.filter((movie) => {
+          return movie.title === input;
+        })
+    console.log(filteredMovie)
+}
 
   render() {
     return (
