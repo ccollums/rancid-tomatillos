@@ -83,3 +83,8 @@ h4 {
   margin: 0 .5em 0 0;
 }
 
+.x-icon {
+  position: absolute;
+  top: 1vh;
+  left: 126vh;
+}
