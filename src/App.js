@@ -61,9 +61,9 @@ class App extends Component {
 
   searchMovies = (input) => {
     const filteredMovie = this.state.movies.filter((movie) => {
-          return movie.title === input;
+          return movie.title.includes(input);
         })
-    console.log(filteredMovie)
+    this.setState({movies: filteredMovie});
 }
 
   render() {
@@ -78,7 +78,7 @@ class App extends Component {
               {this.state.error && <h2>Oops, something went wrong. Please refresh your page!</h2>}
             </section>
             <img className='magnify-glass' src={magnifyGlass}/>
-            <Form />
+            <Form searchMovies={this.searchMovies} />
           </section>}
         {!this.state.movie && <Movies movies={this.state.movies} movieDetails={this.movieDetails}/>}
       </main>

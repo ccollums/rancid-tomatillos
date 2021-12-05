@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
-    constructor(props) {
-      super(props);
+    constructor() {
+      super();
       this.state = {
         title: ''
       }
@@ -11,13 +11,9 @@ class Form extends Component {
 
     handleChange = event => {
         this.setState({[event.target.name]: event.target.value})
+        this.props.searchMovies(this.state.title)
     }
-
-    searchForMovie = () => {
-      this.props.searchMovies('Mulan')
-    }
-    
-
+  
     render() {
         return (
           <form>

@@ -4,7 +4,7 @@ import Preview from './Preview.js'
 
 const Movies = ({movies, movieDetails}) => {
 
-  const moviePosters = movies.map(movie => {
+  const moviePosters = movies.sort((a,b) => {return a.title.localeCompare(b.title)}).map(movie => {
     return (
         <Card
         id = {movie.id}
