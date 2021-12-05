@@ -9,7 +9,9 @@ const Preview = ({movie}) => {
     <section className='details-page'>
       <section className='image-section'>
         <img className='backdrop-image' src={movie.backdrop_path} alt={movie.title}/>
-        <img className='x-icon' src={icon} alt='x icon, click to go back to home page'/>
+        <section className='x-location'>
+          <img className='x-icon' src={icon} alt='x icon, click to go back to home page'/>
+        </section>
         <section className='overlay'>
           <section className='left-side-overlay'>
             <h1>{movie.title}</h1>
@@ -22,7 +24,7 @@ const Preview = ({movie}) => {
               <h2>Watch Trailer</h2>
             </section>
           </section>
-          <h1 className='rating'>{movie.average_rating}</h1>
+          <h1 className='rating'>{movie.average_rating + '/10'}</h1>
         </section>
       </section>
       <section className='overview-section'>

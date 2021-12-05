@@ -6,6 +6,7 @@
   width: 100vw;
   height: 70vh;
   position: relative;
+  opacity: .8;
 }
 
 .x-icon,
@@ -45,6 +46,7 @@
 .movie-details {
   display: flex;
   flex-direction: row;
+  margin-top: 10vh;
 }
 
 h1 {
@@ -64,6 +66,7 @@ h4 {
 .trailer {
   display: flex;
   flex-direction: row;
+  margin-top: 2vh;
 }
 
 .overview-section {
@@ -80,11 +83,19 @@ h4 {
 
 .rating {
   font-size: 6em;
-  margin: 0 .5em 0 0;
+  margin: 6vh 0.5em 0px 108vh;
 }
 
-.x-icon {
+/* .x-icon {
   position: absolute;
   top: 1vh;
   left: 126vh;
-}
+} */
+
+.x-location {
+  display: flex;
+  top: 1vh;
+  position: absolute;
+  z-index: 1;
+  align-items: flex-end;
+ }
