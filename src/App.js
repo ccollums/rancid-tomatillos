@@ -17,7 +17,8 @@ class App extends Component {
     this.state = {
       movies: [],
       movie: '',
-      error: false
+      error: false,
+      videos: [],
     }
   }
 
@@ -25,16 +26,24 @@ class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => response.json())
     .then(data => this.setState({movies : data.movies}))
+    .catch(err => console.log(err))
   }
 
   backToMain = () => {
     this.setState({ movie: ''})
+    this.setState({ videos: []})
   }
 
   handleError = (err) => {
     this.setState({ error: true })
-    console.log(this.state.error)
+  }
 
+  playTrailer = (id) => {
+
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+      .then(response => response.json())
+      .then(data => this.setState({videos : data.videos}))
+      .catch(err => console.log(err))
   }
 
   movieDetails = (id) => {
@@ -62,7 +71,7 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        {!this.state.error && this.state.movie && <Preview movie={this.state.movie} backToMain ={this.backToMain}/>}
+        {!this.state.error && this.state.movie && <Preview movie={this.state.movie} backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}
         {!this.state.movie &&
           <section className='header'>
             <section className='logo-title'>
