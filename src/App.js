@@ -32,6 +32,7 @@ class App extends Component {
   backToMain = () => {
     this.setState({ movie: ''})
     this.setState({ videos: []})
+    this.componentDidMount();
   }
 
   handleError = (err) => {
@@ -61,7 +62,7 @@ class App extends Component {
 
   searchMovies = (input) => {
     const filteredMovie = this.state.movies.filter((movie) => {
-          return movie.title.includes(input);
+          return movie.title.toLowerCase().includes(input) || movie.title.includes(input);
         })
     this.setState({movies: filteredMovie});
 }
