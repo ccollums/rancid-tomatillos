@@ -1,6 +1,7 @@
 import './Preview.css';
 import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
+import Moment from 'moment';
 
 const Preview = ({movie}) => {
 
@@ -28,9 +29,9 @@ const Preview = ({movie}) => {
         <h2>{movie.tagline}</h2>
         <p>{movie.overview}</p>
         <section className='bottom-details'>
-          <h4>Release Date: {movie.release_date}</h4>
-          <h4>Budget: {movie.budget}</h4>
-          <h4>Revenue: {movie.revenue}</h4>
+          <h4>Release Date: {Moment(movie.release_date).format('MM-DD-YYYY')}</h4>
+          <h4>Budget: {'$' + movie.budget.toLocaleString()}</h4>
+          <h4>Revenue: {'$' + movie.revenue.toLocaleString()}</h4>
         </section>
       </section>
     </section>
