@@ -1,22 +1,26 @@
 import "./Movies.css";
 import Card from './Card';
+import Preview from './Preview.js'
 
-const Movies = ({movies}) => {
+const Movies = ({movies, movieDetails}) => {
 
   const moviePosters = movies.map(movie => {
-      return (
-          <Card
-          title={movie.title}
-          image= {movie.poster_path}
-          key={movie.id}
-          />
-      )
+    return (
+        <Card
+        id = {movie.id}
+        title={movie.title}
+        image= {movie.poster_path}
+        key={movie.id}
+        movieDetails={movieDetails}
+        />
+    )
   })
 
   return (
       <section className="movies-container">
           {moviePosters}
       </section>
+
   )
 }
 
