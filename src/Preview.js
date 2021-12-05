@@ -3,14 +3,16 @@ import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
 import Moment from 'moment';
 
-const Preview = ({movie}) => {
+const Preview = ({movie, backToMain}) => {
 
-  return (
+
+
+    return (
     <section className='details-page'>
       <section className='image-section'>
         <img className='backdrop-image' src={movie.backdrop_path} alt={movie.title}/>
         <section className='x-location'>
-          <img className='x-icon' src={icon} alt='x icon, click to go back to home page'/>
+          <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {backToMain()}}/>
         </section>
         <section className='overlay'>
           <section className='left-side-overlay'>

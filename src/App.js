@@ -25,6 +25,10 @@ class App extends Component {
     this.setState({ movies: [...movieData.movies] })
   }
 
+  backToMain = () => {
+    this.setState({ movie: ''})
+  }
+
   movieDetails = (id) => {
     const findMovie = this.state.movies.filter((movie) => {
       return movie.id === id
@@ -50,7 +54,7 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        {this.state.movie && <Preview movie={this.state.movie}/>}
+        {this.state.movie && <Preview movie={this.state.movie} backToMain ={this.backToMain}/>}
         {!this.state.movie &&
           <section className='header'>
             <section className='logo-title'>
