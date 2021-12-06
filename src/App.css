@@ -1,12 +1,17 @@
 .logo {
   height: 15%;
   width: 15%;
-  margin: 1em;
+  margin: 2em 1em 1em 1em;
 }
 
 .magnify-glass {
-  height: 5%;
-  width: 6%;
+  height: 3.4em;
+  width: 10%;
+  border: .9px solid grey;
+  border-right: none;
+  border-radius: .2em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .title {
@@ -16,10 +21,17 @@
 }
 
 html {
-  background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 19%, hsla(285, 95%, 36%, 1) 100%);
+  background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 30%, hsla(230, 95%, 36%, 1) 100%);
+  /* background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 19%, hsla(285, 95%, 36%, 1) 100%); */
   /* background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 19%, hsla(285, 96%, 50%, 1) 100%); */
-  /* background-image: linear-gradient(to right top, #1a191b, #2b2134, #3c294e, #4f3069, #643685, #6c3594, #7534a3, #7d32b3, #7729ba, #7020c2, #6615ca, #5a06d2); */
   background-attachment: fixed;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
 }
 
 .header {

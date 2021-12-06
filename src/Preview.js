@@ -18,14 +18,16 @@ return (
         <h1 className='movie-title'>{movie.title}</h1>
         <section className='movie-details'>
           <h4>{movie.runtime} min </h4>
-          <h4>{movie.genres}</h4>
+          {movie.genres.map(genre => (<h4>{genre}</h4>))}
         </section>
         <section className='trailer'>
           <img className='play-button' src={playButton} alt='clickable play button to watch trailer' onClick={() => {playTrailer(movie.id)}}/>
           <h2>Watch Trailer</h2>
         </section>
       </section>
+      <section className='rating-section'>
       <h1 className='rating'>{Math.round(movie.average_rating)}/10</h1>
+      </section>
     </section>
   </section>
   <section className='overview-section'>

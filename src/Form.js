@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = {
         title: ''
       }
     }
 
     handleChange = event => {
-        this.setState({[event.target.name]: event.target.value})
-        this.props.searchMovies(this.state.title)
+      this.setState({[event.target.name]: event.target.value})
+      this.props.searchMovies(this.state.title)
+      if (!this.state.title) {
+        this.props.componentDidMount()
+      }
+
     }
 
     render() {
@@ -24,8 +28,6 @@ class Form extends Component {
               value={this.state.title}
               onChange={event => this.handleChange(event)}
             />
-
-            {/* <button onClick={event => this.submitIdea(event)}>SUBMIT</button> */}
           </form>
         )
       }
