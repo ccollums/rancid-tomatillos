@@ -1,6 +1,7 @@
 .logo {
   height: 15%;
   width: 15%;
+  margin: 1em;
 }
 
 .magnify-glass {
@@ -8,12 +9,16 @@
   width: 6%;
 }
 
-h1 {
+.title {
   color: white;
+  font-size: 3em;
+  margin: 0;
 }
 
 html {
-  background-image: linear-gradient(to right top, #1a191b, #2b2134, #3c294e, #4f3069, #643685, #6c3594, #7534a3, #7d32b3, #7729ba, #7020c2, #6615ca, #5a06d2);
+  background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 19%, hsla(285, 95%, 36%, 1) 100%);
+  /* background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 19%, hsla(285, 96%, 50%, 1) 100%); */
+  /* background-image: linear-gradient(to right top, #1a191b, #2b2134, #3c294e, #4f3069, #643685, #6c3594, #7534a3, #7d32b3, #7729ba, #7020c2, #6615ca, #5a06d2); */
   background-attachment: fixed;
 }
 
@@ -22,10 +27,12 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: 0;
 }
 
 .logo-title {
   display: flex;
   flex-direction: row;
-  margin: 1em 0 1em 0
+  align-items: center;
+  /* margin: 1em 0 1em 0 */
 }
