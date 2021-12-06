@@ -3,10 +3,9 @@ import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
 import Moment from 'moment';
 
-const Preview = ({movie, backToMain}) => {
+const Preview = ({movie, backToMain, playTrailer, videos}) => {
 
-
-
+console.log(videos)
     return (
     <section className='details-page'>
       <section className='image-section'>
@@ -22,11 +21,11 @@ const Preview = ({movie, backToMain}) => {
               <h4>{movie.genres}</h4>
             </section>
             <section className='trailer'>
-              <img className='play-button' src={playButton} alt="clickable play button to watch trailer"/>
+              <img className='play-button' src={playButton} alt='clickable play button to watch trailer' onClick={() => {playTrailer(movie.id)}}/>
               <h2>Watch Trailer</h2>
             </section>
           </section>
-          <h1 className='rating'>{movie.average_rating + '/10'}</h1>
+          <h1 className='rating'>{Math.round(movie.average_rating)}/10</h1>
         </section>
       </section>
       <section className='overview-section'>
@@ -38,6 +37,16 @@ const Preview = ({movie, backToMain}) => {
           <h4>Revenue: {'$' + movie.revenue.toLocaleString()}</h4>
         </section>
       </section>
+      {videos.length && <section className='trailer-location'>
+      <iframe src={`https://www.youtube.com/embed/${videos[0].key}`}
+        frameBorder=''
+        allow='autoplay; encrypted-media'
+        allowFullScreen
+        title='video'
+        width={960}
+        height={544}
+        />
+      </section>}
     </section>
 )}
 

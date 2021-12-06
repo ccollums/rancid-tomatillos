@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import movieData from './data.js';
 import { render } from 'react-dom';
 import Movies from './Movies.js';
 import Form from './Form.js';
@@ -16,53 +15,71 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
-      movie: ''
+      movies: [],
+      movie: '',
+      error: false,
+      videos: [],
     }
   }
 
-  addMovies = () => {
-    this.setState({ movies: [...movieData.movies] })
+  componentDidMount = () => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => response.json())
+    .then(data => this.setState({movies : data.movies}))
+    .catch(err => console.log(err))
   }
 
   backToMain = () => {
     this.setState({ movie: ''})
+    this.setState({ videos: []})
+    this.componentDidMount();
+  }
+
+  handleError = (err) => {
+    this.setState({ error: true })
+  }
+
+  playTrailer = (id) => {
+
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+      .then(response => response.json())
+      .then(data => this.setState({videos : data.videos}))
+      .catch(err => console.log(err))
   }
 
   movieDetails = (id) => {
+
     const findMovie = this.state.movies.filter((movie) => {
       return movie.id === id
     })
 
-    this.setState({movie: {id: 1, title: "Fake Movie Title", poster_path: "https://image.tmdb.org/t/p/original//7G2VvG1lU8q758uOqU6z2Ds0qpA.jpg", backdrop_path: "https://image.tmdb.org/t/p/original//oazPqs1z78LcIOFslbKtJLGlueo.jpg", release_date: "2019-12-04", overview: "Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!", average_rating: 6, genres: ["Drama", "Comedy"], budget:63000000, revenue:100853753, runtime:139, tagline: "It's a movie!" }})
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie[0].id}`)
+      .then(response => response.json())
+      .then(data => this.setState({movie: data.movie}))
+      .catch(err => this.handleError(err))
 
-    // this.setState({ movie: {title: findMovie[0].title, backdropPath: findMovie[0].backdrop_path, releaseDate: findMovie[0].release_date,
-    // overview: findMovie[0].overview, averageRating: findMovie[0].average_rating, genres: findMovie[0].genres, budget: findMovie[0].budget,
-    // revenue: findMovie[0].revenue, runtime: findMovie[0].runtime, tagline: findMovie[0].tagline}})
 }
 
-
-//   searchMovies = event => {
-//     event.preventDefault();
-//     const filteredMovie = {
-//         this.props.state.movies.filter((movie) => {
-//           return movie.title === this.state.title;
-//         })
-//     }
-// }
+  searchMovies = (input) => {
+    const filteredMovie = this.state.movies.filter((movie) => {
+          return movie.title.toLowerCase().includes(input) || movie.title.includes(input);
+        })
+    this.setState({movies: filteredMovie});
+}
 
   render() {
     return (
       <main className='App'>
-        {this.state.movie && <Preview movie={this.state.movie} backToMain ={this.backToMain}/>}
+        {!this.state.error && this.state.movie && <Preview movie={this.state.movie} backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}
         {!this.state.movie &&
           <section className='header'>
             <section className='logo-title'>
               <img className='logo' src={tomato3} />
               <h1>Rotten Tomatillos</h1>
+              {this.state.error && <h2>Oops, something went wrong. Please refresh your page!</h2>}
             </section>
             <img className='magnify-glass' src={magnifyGlass}/>
-            <Form />
+            <Form searchMovies={this.searchMovies} />
           </section>}
         {!this.state.movie && <Movies movies={this.state.movies} movieDetails={this.movieDetails}/>}
       </main>
