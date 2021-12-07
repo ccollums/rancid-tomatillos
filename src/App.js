@@ -9,6 +9,7 @@ import tomato2 from './images/tomatos2.svg';
 import tomato3 from './images/tomato3.svg';
 import tomato4 from './images/tomato4.svg';
 import magnifyGlass from './images/grey-magnify-glass.svg'
+import {Routes, Route, NavLink} from 'react-router-dom';
 
 
 class App extends Component {
@@ -68,14 +69,18 @@ class App extends Component {
 }
 
   render() {
+    console.log(this.state.movies);
     return (
       <main className='App'>
-        {!this.state.error && this.state.movie && <Preview movie={this.state.movie} backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}
+        
+        <nav>
+          {this.state.movies.map(movie => <NavLink to={`/${movie.id}`} className='nav'>{movie.id}</NavLink>)}
+        </nav>
         {!this.state.movie &&
           <section className='header'>
             <section className='logo-title'>
               <img className='logo' src={tomato2} />
-              <h1 className='title'>Rotten Tomatillos</h1>
+              <h1 className='title'>Rancid Tomatillos</h1>
               {this.state.error && <h2>Oops, something went wrong. Please refresh your page!</h2>}
             </section>
             <section className='form'>
@@ -83,7 +88,10 @@ class App extends Component {
             <Form searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>
             </section>
           </section>}
-        {!this.state.movie && <Movies movies={this.state.movies} movieDetails={this.movieDetails}/>}
+        <Routes>
+          <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails}/>}/>
+          <Route path="/:movieId" element={<Preview movie={this.state.movie} backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}/>
+        </Routes>
       </main>
     )
   }
