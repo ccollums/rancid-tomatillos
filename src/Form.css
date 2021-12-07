@@ -1,8 +1,9 @@
 form {
-  margin-right: 3em
+  margin-right: 3em;
 }
 
 input {
   height: 3em;
   width: 20em;
+  font-size: 108%;
 }

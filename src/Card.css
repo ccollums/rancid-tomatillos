@@ -2,7 +2,9 @@
   height: 50vh;
   cursor: pointer;
 }
+
 .movie-poster:hover {
   transition: .5s ease-in-out;
   transform: scale(1.2);
 }
+

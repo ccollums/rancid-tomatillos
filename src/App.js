@@ -74,12 +74,14 @@ class App extends Component {
         {!this.state.movie &&
           <section className='header'>
             <section className='logo-title'>
-              <img className='logo' src={tomato3} />
-              <h1>Rotten Tomatillos</h1>
+              <img className='logo' src={tomato2} />
+              <h1 className='title'>Rotten Tomatillos</h1>
               {this.state.error && <h2>Oops, something went wrong. Please refresh your page!</h2>}
             </section>
+            <section className='form'>
             <img className='magnify-glass' src={magnifyGlass}/>
-            <Form searchMovies={this.searchMovies} />
+            <Form searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>
+            </section>
           </section>}
         {!this.state.movie && <Movies movies={this.state.movies} movieDetails={this.movieDetails}/>}
       </main>
