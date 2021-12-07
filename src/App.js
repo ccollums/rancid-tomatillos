@@ -73,9 +73,7 @@ class App extends Component {
     return (
       <main className='App'>
         
-        <nav>
-          {this.state.movies.map(movie => <NavLink to={`/${movie.id}`} className='nav'>{movie.id}</NavLink>)}
-        </nav>
+
         {!this.state.movie &&
           <section className='header'>
             <section className='logo-title'>
