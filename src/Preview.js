@@ -2,15 +2,14 @@ import './Preview.css';
 import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
 import Moment from 'moment';
-import { useParams, Link } from 'react-router-dom';
+
 
 const Preview = ({movie, backToMain, playTrailer, videos}) => {
-  const movieId = useParams().movieId;
-  console.log(useParams());
 
-console.log(videos)
+
+console.log(movie)
 return (
-<Link to={`/${movieId}`}>
+
   <section className='details-page'>
     <section className='image-section'>
       <img className='backdrop-image' src={movie.backdrop_path} alt={movie.title}/>
@@ -54,7 +53,6 @@ return (
       />
     </section>}
   </section>
-</Link>
 )}
 
 

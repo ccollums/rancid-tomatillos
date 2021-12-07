@@ -58,7 +58,6 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({movie: data.movie}))
       .catch(err => this.handleError(err))
-
 }
 
   searchMovies = (input) => {
@@ -72,9 +71,6 @@ class App extends Component {
     console.log(this.state.movies);
     return (
       <main className='App'>
-        <nav>
-          {this.state.movies.map(movie => <NavLink to={`/${movie.id}`} className='nav'>{movie.id}</NavLink>)}
-        </nav>
         {!this.state.movie &&
           <section className='header'>
             <section className='logo-title'>
