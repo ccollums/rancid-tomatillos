@@ -6,7 +6,7 @@ import tomato2 from './images/tomatos2.svg';
 import magnifyGlass from './images/grey-magnify-glass.svg'
 import Form from './Form.js'
 
-const Movies = ({movies, error, searchMovies}) => {
+const Movies = ({movies, error, searchMovies, componentDidMount}) => {
 
   const moviePosters = movies.sort((a,b) => {return a.title.localeCompare(b.title)}).map(movie => {
     return (
@@ -15,7 +15,6 @@ const Movies = ({movies, error, searchMovies}) => {
         id = {movie.id}
         title={movie.title}
         image= {movie.poster_path}
-      
         />
       </Link>
     )
@@ -23,17 +22,17 @@ const Movies = ({movies, error, searchMovies}) => {
 
   return (
     <section>
-    <section className='header'>
-            <section className='logo-title'>
-              <img className='logo' src={tomato2} />
-              <h1 className='title'>Rancid Tomatillos</h1>
-              {!{error} && <h2>Oops, something went wrong. Please refresh your page!</h2>}
-            </section>
-            <section className='form'>
-            <img className='magnify-glass' src={magnifyGlass}/>
-            <Form searchMovies={searchMovies} />
-            </section>
+      <section className='header'>
+          <section className='logo-title'>
+            <img className='logo' src={tomato2} />
+            <h1 className='title'>Rancid Tomatillos</h1>
+            {!{error} && <h2>Oops, something went wrong. Please refresh your page!</h2>}
           </section>
+          <section className='form'>
+          <img className='magnify-glass' src={magnifyGlass}/>
+          <Form searchMovies={searchMovies} componentDidMount={componentDidMount}/>
+          </section>
+      </section>
       <section className="movies-container">
           {moviePosters}
       </section>

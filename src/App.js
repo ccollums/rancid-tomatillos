@@ -48,19 +48,18 @@ class App extends Component {
   }
 
 
-//   searchMovies = (input) => {
-//     const filteredMovie = this.state.movies.filter((movie) => {
-//           return movie.title.toLowerCase().includes(input) || movie.title.includes(input);
-//         })
-//     this.setState({movies: filteredMovie});
-// }
+  searchMovies = (input) => {
+    const filteredMovie = this.state.movies.filter((movie) => {
+          return movie.title.toLowerCase().includes(input) || movie.title.includes(input);
+        })
+    this.setState({movies: filteredMovie});
+}
 
   render() {
     return (
       <main className='App'>
-         
         <Routes>
-          <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails} error={this.state.error} searchMovies={this.searchMovies}/>}/>
+          <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails} error={this.state.error} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>}/>
           <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}/>
         </Routes>
       </main>
