@@ -30,7 +30,7 @@ render () {
       <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
       <Link to={'/'} key={Date.now()}>
         <section className='x-location'>
-        <img className='x-icon' src={icon} alt='x icon, click to go back to home page'/>
+        <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {this.props.backToMain()}}/>
       </section>
       </Link>
       <section className='overlay'>

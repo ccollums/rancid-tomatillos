@@ -10,7 +10,7 @@ const PreviewFunction = ({videos, backToMain, playTrailer}) => {
         return (
             <Preview
             videos = {videos}
-            backtoMain={backToMain}
+            backToMain={backToMain}
             playTrailer= {playTrailer}
             urlId = {urlID}
             />
