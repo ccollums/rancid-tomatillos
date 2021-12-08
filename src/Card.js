@@ -1,11 +1,11 @@
 import './Card.css';
-import Preview from './Preview.js'
 
-const Card = ({ image, title, id, movieDetails }) => {
+
+const Card = ({ image, title}) => {
 
   return (
     <section className='card'>
-      <img className='movie-poster' src={image} alt={title} onClick={() => movieDetails(id)}/>
+      <img className='movie-poster' src={image} alt={title}/>
     </section>
   )
 }
