@@ -17,7 +17,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      movie: '',
+      movie: {},
       error: false,
       videos: [],
     }
@@ -49,14 +49,30 @@ class App extends Component {
   }
 
   movieDetails = (id) => {
-
+    
     const findMovie = this.state.movies.filter((movie) => {
       return movie.id === id
     })
 
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie[0].id}`)
+    this.setState({ movie:  {
+      "id": '',
+      "title": "",
+      "poster_path": "",
+      "backdrop_path": "",
+      "release_date": "",
+      "overview": "",
+      "genres": [],
+      "budget": 0,
+      "revenue": 0,
+      "runtime": 0,
+      "tagline": "",
+      "average_rating": 0
+      }})
+    
+
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => response.json())
-      .then(data => this.setState({movie: data.movie}))
+      .then(data => this.setState({ movie: data.movie }))
       .catch(err => this.handleError(err))
 }
 
@@ -68,10 +84,10 @@ class App extends Component {
 }
 
   render() {
-    console.log(this.state.movies);
+    console.log(this.state.movie)
     return (
       <main className='App'>
-        {!this.state.movie &&
+        {!this.state.movie.title &&
           <section className='header'>
             <section className='logo-title'>
               <img className='logo' src={tomato2} />

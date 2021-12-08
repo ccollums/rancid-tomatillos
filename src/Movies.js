@@ -1,12 +1,9 @@
 import "./Movies.css";
 import Card from './Card';
 import Preview from './Preview.js'
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Movies = ({movies, movieDetails}) => {
-
-  const previewMovie = useParams().movieId;
-  console.log(movieDetails);
 
   const moviePosters = movies.sort((a,b) => {return a.title.localeCompare(b.title)}).map(movie => {
     return (

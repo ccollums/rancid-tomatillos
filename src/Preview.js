@@ -2,20 +2,22 @@ import './Preview.css';
 import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
 import Moment from 'moment';
+import { Link } from 'react-router-dom'
 
 
 const Preview = ({movie, backToMain, playTrailer, videos}) => {
+console.log(movie, 'movie')
 
-
-console.log(movie)
 return (
 
   <section className='details-page'>
     <section className='image-section'>
       <img className='backdrop-image' src={movie.backdrop_path} alt={movie.title}/>
-      <section className='x-location'>
+      <Link to={'/'}>
+        <section className='x-location'>
         <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {backToMain()}}/>
       </section>
+      </Link>
       <section className='overlay'>
         <section className='left-side-overlay'>
           <h1 className='movie-title'>{movie.title}</h1>

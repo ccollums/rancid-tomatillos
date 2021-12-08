@@ -1,5 +1,5 @@
 import './Card.css';
-import Preview from './Preview.js'
+
 
 const Card = ({ image, title, id, movieDetails }) => {
 
