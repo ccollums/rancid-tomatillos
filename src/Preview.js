@@ -44,7 +44,7 @@ return (
         <h4>Revenue: {'$' + movie.revenue.toLocaleString()}</h4>
       </section>
     </section>
-    {videos.length && <section className='trailer-location'>
+    {videos.length > 0 && <section className='trailer-location'>
     <iframe src={`https://www.youtube.com/embed/${videos[0].key}`}
       frameBorder=''
       allow='autoplay; encrypted-media'
