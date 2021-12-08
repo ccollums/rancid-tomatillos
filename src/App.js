@@ -3,7 +3,7 @@ import './App.css';
 import { render } from 'react-dom';
 import Movies from './Movies.js';
 import Form from './Form.js';
-import Preview from './Preview.js'
+import PreviewFunction from './PreviewFunction.js'
 import tomato1 from './images/tomato1.svg';
 import tomato2 from './images/tomatos2.svg';
 import tomato3 from './images/tomato3.svg';
@@ -17,7 +17,6 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      movie: {},
       error: false,
       videos: [],
     }
@@ -31,7 +30,7 @@ class App extends Component {
   }
 
   backToMain = () => {
-    this.setState({ movie: ''})
+    // this.setState({ movie: ''})
     this.setState({ videos: []})
     // this.componentDidMount();
   }
@@ -48,32 +47,32 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  movieDetails = (id) => {
+//   movieDetails = (id) => {
     
-    // const findMovie = this.state.movies.filter((movie) => {
-    //   return movie.id === id
-    // })
+//     // const findMovie = this.state.movies.filter((movie) => {
+//     //   return movie.id === id
+//     // })
 
-    this.setState({ movie:  {
-      id: '',
-      title: "",
-      poster_path: "",
-      backdrop_path: "",
-      release_date: "",
-      overview: "",
-      genres: [],
-      budget: 0,
-      revenue: 0,
-      runtime: 0,
-      tagline: "",
-      average_rating: 0
-      }})
+//     this.setState({ movie:  {
+//       id: '',
+//       title: "",
+//       poster_path: "",
+//       backdrop_path: "",
+//       release_date: "",
+//       overview: "",
+//       genres: [],
+//       budget: 0,
+//       revenue: 0,
+//       runtime: 0,
+//       tagline: "",
+//       average_rating: 0
+//       }})
 
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => response.json())
-      .then(data => this.setState({ movie: data.movie }))
-      .catch(err => this.handleError(err))
-}
+//     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+//       .then(response => response.json())
+//       .then(data => this.setState({ movie: data.movie }))
+//       .catch(err => this.handleError(err))
+// }
 
   searchMovies = (input) => {
     const filteredMovie = this.state.movies.filter((movie) => {
@@ -85,7 +84,6 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        {!this.state.movie.title &&
           <section className='header'>
             <section className='logo-title'>
               <img className='logo' src={tomato2} />
@@ -96,10 +94,10 @@ class App extends Component {
             <img className='magnify-glass' src={magnifyGlass}/>
             <Form searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>
             </section>
-          </section>}
+          </section>
         <Routes>
           <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails}/>}/>
-          <Route path="/:movieId" element={<Preview movie={this.state.movie} backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}/>
+          <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}/>
         </Routes>
       </main>
     )
