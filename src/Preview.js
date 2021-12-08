@@ -9,20 +9,8 @@ class Preview extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: {
-              id: '',
-              title: "",
-              poster_path: "",
-              backdrop_path: "",
-              release_date: "",
-              overview: "",
-              genres: [],
-              budget: 0,
-              revenue: 0,
-              runtime: 0,
-              tagline: "",
-              average_rating: 0
-              },
+      movie: {},
+      loading: true,
   }
 }
 
@@ -30,18 +18,19 @@ class Preview extends Component {
   componentDidMount = () => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.urlId}`)
       .then(response => response.json())
-      .then(data => this.setState({ movie: data.movie }))
+      .then(data => this.setState({ movie: data.movie, loading: false }))
       .catch(err => this.handleError(err))
   } 
 
 render () {
   return (
-  <section className='details-page'>
-    <section className='image-section'>
+    <section className='details-page'>
+      {this.state.loading && <h1>Loading</h1>}
+    {!this.state.loading && <section className='image-section'>
       <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
       <Link to={'/'} key={Date.now()}>
         <section className='x-location'>
-        <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {this.props.backToMain()}}/>
+        <img className='x-icon' src={icon} alt='x icon, click to go back to home page'/>
       </section>
       </Link>
       <section className='overlay'>
@@ -60,8 +49,8 @@ render () {
         <h1 className='rating'>{Math.round(this.state.movie.average_rating)}/10</h1>
         </section>
       </section>
-    </section>
-    <section className='overview-section'>
+    </section>}
+    {!this.state.loading && <section className='overview-section'>
       <h2>{this.state.movie.tagline}</h2>
       <p>{this.state.movie.overview}</p>
       <section className='bottom-details'>
@@ -69,7 +58,7 @@ render () {
         <h4>Budget: {'$' + this.state.movie.budget.toLocaleString()}</h4>
         <h4>Revenue: {'$' + this.state.movie.revenue.toLocaleString()}</h4>
       </section>
-    </section>
+    </section>}
     {this.props.videos.length > 0 && <section className='trailer-location'>
     <iframe src={`https://www.youtube.com/embed/${this.props.videos[0].key}`}
       frameBorder=''
