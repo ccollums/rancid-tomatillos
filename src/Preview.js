@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 
 const Preview = ({movie, backToMain, playTrailer, videos}) => {
-console.log(movie, 'movie')
 
 return (
 

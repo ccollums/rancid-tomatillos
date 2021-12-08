@@ -9,7 +9,7 @@ import tomato2 from './images/tomatos2.svg';
 import tomato3 from './images/tomato3.svg';
 import tomato4 from './images/tomato4.svg';
 import magnifyGlass from './images/grey-magnify-glass.svg'
-import {Routes, Route, NavLink} from 'react-router-dom';
+import {Routes, Route, Link} from 'react-router-dom';
 
 
 class App extends Component {
@@ -33,7 +33,7 @@ class App extends Component {
   backToMain = () => {
     this.setState({ movie: ''})
     this.setState({ videos: []})
-    this.componentDidMount();
+    // this.componentDidMount();
   }
 
   handleError = (err) => {
@@ -55,18 +55,18 @@ class App extends Component {
     })
 
     this.setState({ movie:  {
-      "id": '',
-      "title": "",
-      "poster_path": "",
-      "backdrop_path": "",
-      "release_date": "",
-      "overview": "",
-      "genres": [],
-      "budget": 0,
-      "revenue": 0,
-      "runtime": 0,
-      "tagline": "",
-      "average_rating": 0
+      id: '',
+      title: "",
+      poster_path: "",
+      backdrop_path: "",
+      release_date: "",
+      overview: "",
+      genres: [],
+      budget: 0,
+      revenue: 0,
+      runtime: 0,
+      tagline: "",
+      average_rating: 0
       }})
     
 
@@ -84,7 +84,6 @@ class App extends Component {
 }
 
   render() {
-    console.log(this.state.movie)
     return (
       <main className='App'>
         {!this.state.movie.title &&
