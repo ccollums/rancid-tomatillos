@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom'
 
 const Preview = ({movie, backToMain, playTrailer, videos}) => {
 
+
 return (
 
   <section className='details-page'>
     <section className='image-section'>
       <img className='backdrop-image' src={movie.backdrop_path} alt={movie.title}/>
-      <Link to={'/'}>
+      <Link to={'/'} key={Date.now()}>
         <section className='x-location'>
         <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {backToMain()}}/>
       </section>

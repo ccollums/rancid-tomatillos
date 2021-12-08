@@ -7,12 +7,12 @@ const Movies = ({movies, movieDetails}) => {
 
   const moviePosters = movies.sort((a,b) => {return a.title.localeCompare(b.title)}).map(movie => {
     return (
-      <Link to={`/${movie.id}`}>
+      <Link to={`/${movie.id}`} key={movie.id}>
         <Card
         id = {movie.id}
         title={movie.title}
         image= {movie.poster_path}
-        key={movie.id}
+      
         movieDetails={movieDetails}
         />
       </Link>

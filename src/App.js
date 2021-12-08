@@ -50,9 +50,9 @@ class App extends Component {
 
   movieDetails = (id) => {
     
-    const findMovie = this.state.movies.filter((movie) => {
-      return movie.id === id
-    })
+    // const findMovie = this.state.movies.filter((movie) => {
+    //   return movie.id === id
+    // })
 
     this.setState({ movie:  {
       id: '',
@@ -68,7 +68,6 @@ class App extends Component {
       tagline: "",
       average_rating: 0
       }})
-    
 
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => response.json())
