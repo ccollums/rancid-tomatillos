@@ -9,6 +9,7 @@ import tomato2 from './images/tomatos2.svg';
 import tomato3 from './images/tomato3.svg';
 import tomato4 from './images/tomato4.svg';
 import magnifyGlass from './images/grey-magnify-glass.svg'
+import error from './images/error-cloud-icon.svg'
 import {Routes, Route, Link} from 'react-router-dom';
 
 
@@ -31,7 +32,7 @@ class App extends Component {
 
   backToMain = () => {
     // this.setState({ movie: ''})
-    this.setState({ videos: []})
+    this.setState({ videos: [], error: false})
     // this.componentDidMount();
   }
 
@@ -40,11 +41,10 @@ class App extends Component {
   }
 
   playTrailer = (id) => {
-
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
       .then(response => response.json())
       .then(data => this.setState({videos : data.videos}))
-      .catch(err => console.log(err))
+      .catch(err => this.handleError(err))
   }
 
 
@@ -62,7 +62,11 @@ class App extends Component {
           <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails} error={this.state.error} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>}/>
           <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}/>
         </Routes>
-        {this.state.error && <h2 className='error-message'>Oops, something went wrong. Please refresh your page!</h2>}
+        {this.state.error && 
+        <section className='error'>
+          <img className='sad-cloud' src={error} alt='photo of a sad cloud because there is an error'/>
+          <h2 className='error-message'>Oops, something went wrong. Please refresh your page!</h2>
+        </section>}
       </main>
     )
   }

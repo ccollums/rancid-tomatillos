@@ -116,3 +116,25 @@ h4 {
     top: 3%;
     left: 90%;
  }
+
+ .loading {
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+   height:80vh;
+ }
+
+ .loading-circle {
+  width: 40vh;
+  height: 40vh;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+ }
+
+ @keyframes rotate{
+  from{ transform: rotate(-360deg); }
+  to{ transform: rotate(360deg); }
+}
