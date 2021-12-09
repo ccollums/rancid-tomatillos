@@ -1,6 +1,7 @@
 import './Preview.css';
 import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
+import loading from './images/loading-icon.svg'
 import Moment from 'moment';
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react';
@@ -25,7 +26,10 @@ class Preview extends Component {
 render () {
   return (
     <section className='details-page'>
-      {this.state.loading && <h1>Loading</h1>}
+      {this.state.loading &&
+      <section className='loading'> 
+        <img className='loading-circle' src={loading} alt='a spinning loading circle'/>
+      </section>}
     {!this.state.loading && <section className='image-section'>
       <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
       <Link to={'/'} key={Date.now()}>
