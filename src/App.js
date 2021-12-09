@@ -26,7 +26,7 @@ class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => response.json())
     .then(data => this.setState({movies : data.movies}))
-    .catch(err => console.log(err))
+    .catch(err => this.handleError(err))
   }
 
   backToMain = () => {
@@ -62,6 +62,7 @@ class App extends Component {
           <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails} error={this.state.error} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>}/>
           <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}/>
         </Routes>
+        {this.state.error && <h2 className='error-message'>Oops, something went wrong. Please refresh your page!</h2>}
       </main>
     )
   }

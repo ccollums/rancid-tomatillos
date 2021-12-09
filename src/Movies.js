@@ -26,7 +26,6 @@ const Movies = ({movies, error, searchMovies, componentDidMount}) => {
           <section className='logo-title'>
             <img className='logo' src={tomato2} />
             <h1 className='title'>Rancid Tomatillos</h1>
-            {!{error} && <h2>Oops, something went wrong. Please refresh your page!</h2>}
           </section>
           <section className='form'>
           <img className='magnify-glass' src={magnifyGlass}/>
