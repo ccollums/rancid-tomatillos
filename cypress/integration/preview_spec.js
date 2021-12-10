@@ -18,13 +18,16 @@ describe('Rancid Tomatillos', () => {
         cy.contains('Watch Trailer')
       });
 
-    it.skip('should be able to click the play icon and the embedded youtube video will pop up on the page', () => {
+    it('should be able to click the play icon and the embedded youtube video will pop up on the page', () => {
         cy.get('.play-button').click()
         .get('.trailer-location').contains('iframe')
     })
 
-    it.skip("should be able to go back to the main dashboard when the x icon is clicked", () => {
-        
+    it.only("should be able to go back to the main dashboard when the x icon is clicked", () => {
+      cy.visit('http://localhost:3000/')
+      cy.visit('http://localhost:3000/337401')
+        .get('.x-icon').click()
+      // check that movies are loaded again
     })
 
     it.skip('should show an error message if there is a server error', () => {
