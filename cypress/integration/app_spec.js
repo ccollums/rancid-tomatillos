@@ -54,21 +54,31 @@ describe('Rancid Tomatillos', () => {
           
       // })
 
-      it.only('should show movies when the page loads', () => {
-          cy.get('section[class="movies-container"]')
-            .children('section[class="card"]')
+      it('should show movies when the page loads', () => {
+          cy.get('.movie-poster')
+             .should('have.length', 3)
       })
 
-      it.skip('should start to filter movies when a movie is typed into the input bar', () => {
-        
+      it('should start to filter movies when a movie is typed into the input bar', () => {
+        cy.get('input[type="text"]')
+          .type('mon')
+          .get('.movie-poster')
+          .should('have.length', 1)
     })
 
-    it.skip('should display an error message if the incorrect URL is used', () => {
-
+    it.only('should display an error message if the incorrect URL is used', () => {
+      cy.visit('http://localhost:3000/2')
+        .get('.error-message')
+        .should('have.value', 'Oops, something went wrong. Please refresh your page!')
     })
 
     it.skip('should display an error message if there is a server error', () => {
-
+        cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movie', { 
+          statusCode: 404,
+          body: 'Forced 404'
+        })
+        .get('.error-message')
+        .should('have.value', 'Oops, something went wrong. Please refresh your page!')
     })
 })
 
