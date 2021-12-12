@@ -51,7 +51,9 @@ render () {
           <h2 className='error-message'>Oops, something went wrong. Page not found!</h2>
         </section>}
     {!this.state.loading && !this.state.error && <section className='image-section'>
-      <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
+      <section className='fade'>
+        <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
+      </section>
       <Link to={'/'} key={Date.now()}>
         <section className='x-location'>
         <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {this.props.backToMain()}}/>
