@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 class Preview extends Component {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef();
     this.state = {
       movie: {},
       loading: true,
@@ -29,6 +30,14 @@ class Preview extends Component {
       .then(data => this.setState({ movie: data.movie, loading: false }))
       .catch(err => this.handleError(err))
   } 
+
+  componentDidUpdate = () => {
+    if (this.props.videos.length > 0) {
+      console.log('hi')
+      this.myRef.current.scrollIntoView({ behavior: 'smooth'})
+      // window.scrollTo(0, this.myRef.current.offsetTop);
+    }
+  }
 
   handleError = (err) => {
     this.setState({ error: true, loading: false})
@@ -86,7 +95,7 @@ render () {
       </section>
     </section>}
     {this.props.videos.length > 0 && <section className='trailer-location'>
-    <iframe src={`https://www.youtube.com/embed/${this.findMovieTrailer()}`}
+    <iframe ref={this.myRef} src={`https://www.youtube.com/embed/${this.findMovieTrailer()}`}
       frameBorder=''
       allow='autoplay; encrypted-media'
       allowFullScreen
