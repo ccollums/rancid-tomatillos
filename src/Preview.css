@@ -19,7 +19,6 @@
 .play-button {
   height: 6em;
   cursor: pointer;
-  /* position: absolute; */
 }
 
 .play-button:hover {
@@ -37,8 +36,7 @@
   flex-direction: row;
   justify-content: space-between;
   position: absolute;
-  /* flex-wrap: wrap; */
-  top: 45vh;
+  top: 43vh;
   left: 5vh;
   bottom: 0;
   right: 0;
@@ -53,14 +51,13 @@
 .movie-details {
   display: flex;
   flex-direction: row;
-  margin-top: 10vh;
+  margin-top: 1em;
 }
 
 .movie-title,
 .rating {
   font-size: 3em;
-  margin: .5em 0 0 0;
-  position: absolute;
+  margin: 0;
 }
 
 h2 {
@@ -80,7 +77,8 @@ h4 {
 .overview-section {
   display: flex;
   flex-direction: column;
-  margin-left: 3em;
+  margin-left: 3.6em;
+  /* font-size: 1.3em; */
 }
 
 .bottom-details {
@@ -91,7 +89,7 @@ h4 {
 
 .rating {
   font-size: 6em;
-  /* margin: 6vh 0.5em 0px 108vh; */
+  margin: 0.4em 0.1em 0 0;
 }
 
 .rating-section {
@@ -102,11 +100,6 @@ h4 {
 .play-button {
   margin-top: 1em;
 }
-/* .x-icon {
-  position: absolute;
-  top: 1vh;
-  left: 126vh;
-} */
 
 .x-location {
   display: flex;

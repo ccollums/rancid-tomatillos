@@ -23,6 +23,10 @@ class Preview extends Component {
       .catch(err => this.handleError(err))
   } 
 
+  findMovieTrailer = () => {
+    return this.props.videos.find(video => {return video.type === 'Trailer'}).key
+  }
+
 render () {
   return (
     <section className='details-page'>
@@ -64,7 +68,7 @@ render () {
       </section>
     </section>}
     {this.props.videos.length > 0 && <section className='trailer-location'>
-    <iframe src={`https://www.youtube.com/embed/${this.props.videos[0].key}`}
+    <iframe src={`https://www.youtube.com/embed/${this.findMovieTrailer()}`}
       frameBorder=''
       allow='autoplay; encrypted-media'
       allowFullScreen
