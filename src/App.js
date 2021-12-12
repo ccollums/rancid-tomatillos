@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
-import { render } from 'react-dom';
+import './css/App.css';
+// import { render } from 'react-dom';
 import Movies from './Movies.js';
-import Form from './Form.js';
 import PreviewFunction from './PreviewFunction.js'
-import tomato1 from './images/tomato1.svg';
-import tomato2 from './images/tomatos2.svg';
-import tomato3 from './images/tomato3.svg';
-import tomato4 from './images/tomato4.svg';
-import magnifyGlass from './images/grey-magnify-glass.svg'
 import error from './images/error-cloud-icon.svg'
-import {Routes, Route, Link} from 'react-router-dom';
-
+import {Routes, Route} from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -24,10 +17,10 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    {fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => response.json())
     .then(data => this.setState({movies : data.movies}))
-    .catch(err => this.handleError(err))
+    .catch(err => this.handleError(err))}
   }
 
   backToMain = () => {
@@ -60,7 +53,7 @@ class App extends Component {
       <main className='App'>
         <Routes>
           <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails} error={this.state.error} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>}/>
-          <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos}/>}/>
+          <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos} handleError={this.handleError}/>}/>
         </Routes>
         {this.state.error && 
         <section className='error'>

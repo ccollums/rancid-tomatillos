@@ -1,6 +1,5 @@
-import "./Movies.css";
+import "./css/Movies.css";
 import Card from './Card';
-import Preview from './Preview.js'
 import { Link } from 'react-router-dom';
 import tomato2 from './images/tomatos2.svg';
 import magnifyGlass from './images/grey-magnify-glass.svg'

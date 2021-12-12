@@ -1,4 +1,4 @@
-import './Preview.css';
+import './css/Preview.css';
 import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
 import loading from './images/loading-icon.svg'
