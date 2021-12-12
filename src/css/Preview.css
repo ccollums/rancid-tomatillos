@@ -9,16 +9,16 @@
 }
 
 .backdrop-image {
-  width: 100vw;
   height: 70vh;
+  width: 100vw;
   position: relative;
   opacity: .8;
 }
 
 .x-icon,
 .play-button {
-  height: 6em;
   cursor: pointer;
+  height: 6em;
 }
 
 .play-button:hover {
@@ -124,6 +124,18 @@ h4 {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   border-radius: 50%;
+}
+
+.sad-cloud {
+  height: 30vh
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8em;
 }
 
 @keyframes rotate{

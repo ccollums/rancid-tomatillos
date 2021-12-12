@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './css/App.css';
-// import { render } from 'react-dom';
+import {Routes, Route} from 'react-router-dom';
 import Movies from './Movies.js';
 import PreviewFunction from './PreviewFunction.js'
 import error from './images/error-cloud-icon.svg'
-import {Routes, Route} from 'react-router-dom';
+import './css/App.css';
 
 class App extends Component {
   constructor() {
