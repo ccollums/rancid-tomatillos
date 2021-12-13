@@ -4,6 +4,7 @@ import Movies from './Movies.js';
 import PreviewFunction from './PreviewFunction.js'
 import error from './images/error-cloud-icon.svg'
 import './css/App.css';
+import {getMovies, getSingleMovie} from './api.js'
 
 class App extends Component {
   constructor() {
@@ -11,21 +12,12 @@ class App extends Component {
     this.state = {
       movies: [],
       error: false,
-      videos: [],
     }
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+    getMovies()
       .then(data => this.setState({movies : data.movies}))
-      .catch(err => this.handleError(err))
-  }
-
-  playTrailer = (id) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
-      .then(response => response.json())
-      .then(data => this.setState({videos : data.videos}))
       .catch(err => this.handleError(err))
   }
 

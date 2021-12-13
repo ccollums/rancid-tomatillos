@@ -6,6 +6,7 @@ import loading from './images/loading-icon.svg'
 import Moment from 'moment';
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react';
+import {getVideos, getSingleMovie} from './api.js'
 
 class Preview extends Component {
   constructor(props) {
@@ -15,11 +16,12 @@ class Preview extends Component {
       movie: {},
       loading: true,
       error: false,
+      videos: [] 
   }
 }
 
   componentDidMount = () => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.urlId}`)
+    getVideos(this.props.urlId)
       .then(function(response) {
         if (!response.ok) {
           this.setState({error: true, loading: false})
@@ -32,9 +34,19 @@ class Preview extends Component {
   } 
 
   componentDidUpdate = () => {
-    if (this.props.videos.length > 0) {
+    if (this.state.videos.length > 0) {
       this.myRef.current.scrollIntoView({ behavior: 'smooth'})
     }
+  }
+
+  componentWillUnmount = () => {
+   this.setState({ videos: [] })
+  }
+
+  playTrailer = (id) => {
+    getSingleMovie(id)
+      .then(data => this.setState({videos : data.videos}))
+      .catch(err => this.handleError(err))
   }
 
   handleError = (err) => {
@@ -42,7 +54,7 @@ class Preview extends Component {
   }
 
   findMovieTrailer = () => {
-    return this.props.videos.find(video => {return video.type === 'Trailer'}).key
+    return this.state.videos.find(video => {return video.type === 'Trailer'}).key
   }
 
 render () {
@@ -74,7 +86,7 @@ render () {
             {this.state.movie.genres.map(genre => (<h4 key={genre}>{genre}</h4>))}
           </section>
           <section className='trailer'>
-            <img className='play-button' src={playButton} alt='clickable play button to watch trailer' onClick={() => {this.props.playTrailer(this.state.movie.id)}}/>
+            <img className='play-button' src={playButton} alt='clickable play button to watch trailer' onClick={() => {this.playTrailer(this.state.movie.id)}}/>
             <h2>Watch Trailer</h2>
           </section>
         </section>
@@ -92,7 +104,7 @@ render () {
         <h4>Revenue: {'$' + this.state.movie.revenue.toLocaleString()}</h4>
       </section>
     </section>}
-    {this.props.videos.length > 0 && <section className='trailer-location'>
+    {this.state.videos.length > 0 && <section className='trailer-location'>
     <iframe ref={this.myRef} src={`https://www.youtube.com/embed/${this.findMovieTrailer()}`}
       frameBorder=''
       allow='autoplay; encrypted-media'
