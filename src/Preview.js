@@ -53,25 +53,25 @@ render () {
         <img className='loading-circle' src={loading} alt='a spinning loading circle'/>
       </section>}
       {this.state.error && !this.state.loading && 
-        <section className='error'>
-          <img className='sad-cloud' src={error} alt='photo of a sad cloud because there is an error'/>
-          <h2 className='error-message'>Oops, something went wrong. Page not found!</h2>
-        </section>}
+      <section className='error'>
+        <img className='sad-cloud' src={error} alt='a sad cloud because there is an error'/>
+        <h2 className='error-message'>Oops, something went wrong. Page not found!</h2>
+      </section>}
     {!this.state.loading && !this.state.error && <section className='image-section'>
       <section className='fade'>
         <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
       </section>
-      <Link to={'/'} key={Date.now()}>
+      <Link to={'/'}>
         <section className='x-location'>
-        <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {this.props.backToMain()}}/>
-      </section>
+          <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {this.props.backToMain()}}/>
+        </section>
       </Link>
       <section className='overlay'>
         <section className='left-side-overlay'>
           <h1 className='movie-title'>{this.state.movie.title}</h1>
           <section className='movie-details'>
             <h4>{this.state.movie.runtime} min </h4>
-            {this.state.movie.genres.map(genre => (<h4>{genre}</h4>))}
+            {this.state.movie.genres.map(genre => (<h4 key={genre}>{genre}</h4>))}
           </section>
           <section className='trailer'>
             <img className='play-button' src={playButton} alt='clickable play button to watch trailer' onClick={() => {this.props.playTrailer(this.state.movie.id)}}/>
@@ -79,7 +79,7 @@ render () {
           </section>
         </section>
         <section className='rating-section'>
-        <h1 className='rating'>{Math.round(this.state.movie.average_rating)}/10</h1>
+         <h1 className='rating'>{Math.round(this.state.movie.average_rating)}/10</h1>
         </section>
       </section>
     </section>}
@@ -103,8 +103,7 @@ render () {
       />
     </section>}
   </section>
-)}
-
+  )}
 }
 
 export default Preview;
