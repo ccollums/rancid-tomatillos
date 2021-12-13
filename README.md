@@ -1,70 +1,88 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rancid Tomatillos
+Mod3 2108 FE
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents
+  - [Install + Setup](#set-up)  
+  - [Abstract](#abstract)
+  - [Architecture](#architecture)
+  - [Technologies](#technologies)
+  - [Contributors](#contributors)
+  - [Wins](#wins)
+  - [Challenges + Improvements](#challenges-+-Improvements)
+  - [Project Specs](#project-specs)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Install + Setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  - clone this repo: [here](https://github.com/ccollums/rancid-tomatillos)
+   - On the command line, type: **$ npm install**
+   - On the command line, type: **$ npm start**
+   - Visit http://localhost:3000/ in the browser
+   - 
+## Project Specs
+   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+  
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Abstract
 
-### `npm run build`
+  ![dashboard](https://media.giphy.com/media/UCuIYdZnkTX1SFwQa7/giphy.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  This project is designed as a dashboard app that allows users to learn more about popular movies. Upon page load, movie posters are displayed that a user can click on to learn more about that movie. 
+  
+![details](https://media.giphy.com/media/CMzHYb4mI7bXzbDULJ/giphy.gif)
+  
+  If the user clicks on a movie poster a preview is displayed. This preview provides information about the movie including the runtime, genre(s), tagline, overview, release date, budget, and revenue. The preview also has a "Watch Trailer" button that if clicked will load a preview from Youtube onto the page. Also shown is an "x" button that closes the preview and returns to the home page. 
+  
+ ![x](https://media.giphy.com/media/6UaL74M7EyCe3P73Dr/giphy.gif)
+  
+ A search bar allows the user to find a movie by the title. If the search bar is emptied, the dashboard will be displayed again.
+ 
+ ![search](https://media.giphy.com/media/nFVycfHtE8Yw3gCVh1/giphy.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  The app includes a loading screen that is displayed during page loading and also can display an error message for server / url issues. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  The goals of the project were to gain competency with React fundamentals, learn to test React components and asynchronous Javascript, and create a multi-page UX using Router. 
+  
+  ![Screen Shot 2021-10-25 at 7 23 02 PM](https://user-images.githubusercontent.com/87510749/138788486-f6e22feb-cf42-48d4-aa69-1d49dd1ff35c.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Architecture
+  Our version of the Rancid Tomatillos project pulls all of its data from a third party API provided by our instructors. On page load, we perform a fetch call and set the state of our main class component. Once the state is set the movie-posters are loaded to the DOM with dynamically created routes using movie specific IDs. If a user clicks on a movie-poster another fetch call is made that obtains more information about a specific movie to load onto the preview. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
+  - Javascript
+  - CSS HTML
+  - Atom / VSCode
+  - Git Version Control / GitHub
+  - Webpack node package
+  - React 
+  - Router
+  - Google Chrome or Web Browser of User's Choice
+  - Mac OS Terminal/Command Line
+  - Cypress
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contributors
+  - [Carly Collums](https://github.com/ccollums)
+  - [David Tran](https://github.com/isleofyou)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Artists
+Loader by Rohith M S from NounProject.com
+Tomato by Olga from NounProject.com
+Magnify by TS Graphics from NounProject.com
+X by Imam from NounProject.com
+Play Button by Mike Rowe from NounProject.com
 
-## Learn More
+## Wins
+  - Successfully refactored our app to add Router V6 functionality. 
+  - Successfully created our first React app.
+  - Successfully used Cypress and wrote tests to confirm the app was functioning as intended.
+  - Successfully impplemented error handling for server issues and nonexisting URLs. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Challenges + Improvements
+  - The team initially faced challenges refactoring the code to work with Router. We essentially had to rewire the entire application to work dynamically through pathing.
+  - The app initially had a lot of timing errors. We discovered a need to add properties to our state that assisted with timing errors. 
+  - We plan to improve the UX further by implementing more responsive resizable CSS properties. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
