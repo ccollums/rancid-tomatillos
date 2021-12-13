@@ -5,7 +5,7 @@ import tomato2 from './images/tomatos2.svg';
 import magnifyGlass from './images/grey-magnify-glass.svg'
 import Form from './Form.js'
 
-const Movies = ({movies, error, searchMovies, componentDidMount}) => {
+const Movies = ({movies, searchMovies, componentDidMount}) => {
 
   const moviePosters = movies.sort((a,b) => {return a.title.localeCompare(b.title)}).map(movie => {
     return (
@@ -22,21 +22,19 @@ const Movies = ({movies, error, searchMovies, componentDidMount}) => {
   return (
     <section>
       <section className='header'>
-          <section className='logo-title'>
-            <img className='logo' src={tomato2} />
-            <h1 className='title'>Rancid Tomatillos</h1>
-          </section>
-          <section className='form'>
-          <img className='magnify-glass' src={magnifyGlass}/>
+        <section className='logo-title'>
+          <img className='logo' src={tomato2} alt='a tomato that looks like a sketch'/>
+          <h1 className='title'>Rancid Tomatillos</h1>
+        </section>
+        <section className='form'>
+          <img className='magnify-glass' src={magnifyGlass} alt='a magnify glass'/>
           <Form searchMovies={searchMovies} componentDidMount={componentDidMount}/>
-          </section>
+        </section>
       </section>
       <section className="movies-container">
-          {moviePosters}
+        {moviePosters}
       </section>
-      </section>
-
-  )
-}
+    </section>
+  )}
 
 export default Movies;
