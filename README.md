@@ -46,9 +46,6 @@ Mod3 2108 FE
 
   The goals of the project were to gain competency with React fundamentals, learn to test React components and asynchronous Javascript, and create a multi-page UX using Router. 
   
-  ![Screen Shot 2021-10-25 at 7 23 02 PM](https://user-images.githubusercontent.com/87510749/138788486-f6e22feb-cf42-48d4-aa69-1d49dd1ff35c.png)
-
-
 ## Architecture
   Our version of the Rancid Tomatillos project pulls all of its data from a third party API provided by our instructors. On page load, we perform a fetch call and set the state of our main class component. Once the state is set the movie-posters are loaded to the DOM with dynamically created routes using movie specific IDs. If a user clicks on a movie-poster another fetch call is made that obtains more information about a specific movie to load onto the preview. 
 
