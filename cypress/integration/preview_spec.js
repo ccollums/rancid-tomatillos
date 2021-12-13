@@ -20,26 +20,35 @@ describe('Rancid Tomatillos', () => {
 
     it('should be able to click the play icon and the embedded youtube video will pop up on the page', () => {
         cy.get('.play-button').click()
-        .get('.trailer-location').contains('iframe')
+        .get('.trailer-location')
+        .get('iframe')
     })
 
-    it.only("should be able to go back to the main dashboard when the x icon is clicked", () => {
-      cy.visit('http://localhost:3000/')
+    it("should be able to go back to the main dashboard when the x icon is clicked", () => {
       cy.visit('http://localhost:3000/337401')
         .get('.x-icon').click()
-      // check that movies are loaded again
+        .get('.movie-poster')
+        .should('have.length', 40)
     })
 
-    it.skip('should show an error message if there is a server error', () => {
 
+    it('should show an error message if there is a server error', () => {
+      cy.visit('http://localhost:3000/33740')
+      .get('.error-message')
     })
 
-    it.skip("should show an error if the user goes to the wrong URL", () => {
-
+    it("should show an error if the user goes to the wrong URL", () => {
+      cy.visit('http://localhost:3000/33740')
+      .get('.error-message')
     })
 
-    it.skip('should be able to use the back arrow to go back to the main dashboard', () => {
-        cy.go('back')
+    it('should be able to use the back arrow to go back to the main dashboard', () => {
+      cy.visit('http://localhost:3000/') 
+      cy.visit('http://localhost:3000/337401') 
+      cy.go('back')
+        .get('.movie-poster')
+        .should('have.length', 40)
+
     })
 
 
