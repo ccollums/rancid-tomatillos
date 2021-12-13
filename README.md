@@ -26,7 +26,7 @@ Mod3 2108 FE
   
 ## Abstract
 
-<img src="https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif" width="500">
+<img src="https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif" width="1500">
 
   ![dashboard](https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif)
 
