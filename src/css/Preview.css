@@ -48,7 +48,7 @@
   flex-direction: row;
   justify-content: space-between;
   position: absolute;
-  top: 39vh;
+  top: 42vh;
   left: 5vh;
   bottom: 0;
   right: 0;
@@ -76,7 +76,7 @@
 }
 
 .movie-title {
-  font-size: 3em;
+  font-size: 3.5em;
 }
 
 h2 {
@@ -97,6 +97,7 @@ h4 {
   display: flex;
   flex-direction: column;
   margin: 1em 3.6em 0 3.6em; 
+  font-size: 1.2em;
 }
 
 .bottom-details {
@@ -107,7 +108,7 @@ h4 {
 
 .rating {
   font-size: 6em;
-  margin: 0.7em 0.5em 0 0;
+  margin: 0.5em 0.5em 0 0;
 }
 
 .play-button {
