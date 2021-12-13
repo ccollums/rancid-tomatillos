@@ -64,11 +64,11 @@ Mod3 2108 FE
   - [David Tran](https://github.com/isleofyou)
 
 ## Artists
-Loader by Rohith M S from NounProject.com
-Tomato by Olga from NounProject.com
-Magnify by TS Graphics from NounProject.com
-X by Imam from NounProject.com
-Play Button by Mike Rowe from NounProject.com
+- Loader by Rohith M S from NounProject.com
+- Tomato by Olga from NounProject.com
+- Magnify by TS Graphics from NounProject.com
+- X by Imam from NounProject.com
+- Play Button by Mike Rowe from NounProject.com
 
 ## Wins
   - Successfully refactored our app to add Router V6 functionality. 
