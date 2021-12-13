@@ -25,8 +25,9 @@ Mod3 2108 FE
    - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
   
 ## Abstract
-
-<img src="https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif" width="900" align="center">
+<p align="center">
+<img src="https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif" width="900">
+</p>
 
   This project is designed as a dashboard app that allows users to learn more about popular movies. Upon page load, movie posters are displayed that a user can click on to learn more about that movie. 
   
