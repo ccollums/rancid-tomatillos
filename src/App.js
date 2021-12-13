@@ -51,7 +51,7 @@ class App extends Component {
     return (
       <main className='App'>
         <Routes>
-          <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails} error={this.state.error} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount}/>}/>
+          <Route path="/" element ={<Movies movies={this.state.movies} movieDetails={this.movieDetails} error={this.state.error} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount} backToMain ={this.backToMain} />}/>
           <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos} handleError={this.handleError}/>}/>
         </Routes>
         {this.state.error && 

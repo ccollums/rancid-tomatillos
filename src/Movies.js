@@ -23,8 +23,8 @@ const Movies = ({movies, error, searchMovies, componentDidMount}) => {
     <section>
       <section className='header'>
           <section className='logo-title'>
-            <img className='logo' src={tomato2} />
-            <h1 className='title'>Rancid Tomatillos</h1>
+            <img className='logo' src={tomato2} alt='logo' onClick={componentDidMount}/>
+            <h1 className='title' onClick={componentDidMount}>Rancid Tomatillos</h1>
           </section>
           <section className='form'>
           <img className='magnify-glass' src={magnifyGlass}/>

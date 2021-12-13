@@ -65,3 +65,11 @@ html {
   align-items: center;
   justify-content: center;
 }
+
+.logo, .title {
+  cursor: pointer;
+}
+
+.title:hover {
+  color: #cb137b;
+}
