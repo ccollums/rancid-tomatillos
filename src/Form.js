@@ -10,12 +10,13 @@ class Form extends Component {
     }
 
     handleChange = event => {
-      this.setState({[event.target.name]: event.target.value})
-      this.props.searchMovies(this.state.title)
-      if (!this.state.title) {
-        this.props.componentDidMount()
-      }
-
+      this.setState({[event.target.name]: event.target.value}, () => {
+        this.props.searchMovies(this.state.title)
+        if (!this.state.title) {
+          this.props.searchMovies()
+          this.props.componentDidMount()
+        }
+      })
     }
 
     render() {
