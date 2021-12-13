@@ -1,6 +1,7 @@
-import './Preview.css';
+import './css/Preview.css';
 import icon from './images/x-icon.svg';
 import playButton from './images/play-button.svg'
+import error from './images/error-cloud-icon.svg'
 import loading from './images/loading-icon.svg'
 import Moment from 'moment';
 import { Link } from 'react-router-dom'
@@ -9,19 +10,40 @@ import React, { Component } from 'react';
 class Preview extends Component {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef();
     this.state = {
       movie: {},
       loading: true,
+      error: false,
   }
 }
 
-
   componentDidMount = () => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.urlId}`)
-      .then(response => response.json())
+      .then(function(response) {
+        if (!response.ok) {
+          this.setState({error: true, loading: false})
+        } else {
+          return response.json()
+        }
+      })
       .then(data => this.setState({ movie: data.movie, loading: false }))
       .catch(err => this.handleError(err))
   } 
+
+  componentDidUpdate = () => {
+    if (this.props.videos.length > 0) {
+      this.myRef.current.scrollIntoView({ behavior: 'smooth'})
+    }
+  }
+
+  handleError = (err) => {
+    this.setState({ error: true, loading: false})
+  }
+
+  findMovieTrailer = () => {
+    return this.props.videos.find(video => {return video.type === 'Trailer'}).key
+  }
 
 render () {
   return (
@@ -30,8 +52,15 @@ render () {
       <section className='loading'> 
         <img className='loading-circle' src={loading} alt='a spinning loading circle'/>
       </section>}
-    {!this.state.loading && <section className='image-section'>
-      <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
+      {this.state.error && !this.state.loading && 
+        <section className='error'>
+          <img className='sad-cloud' src={error} alt='photo of a sad cloud because there is an error'/>
+          <h2 className='error-message'>Oops, something went wrong. Page not found!</h2>
+        </section>}
+    {!this.state.loading && !this.state.error && <section className='image-section'>
+      <section className='fade'>
+        <img className='backdrop-image' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
+      </section>
       <Link to={'/'} key={Date.now()}>
         <section className='x-location'>
         <img className='x-icon' src={icon} alt='x icon, click to go back to home page' onClick={() => {this.props.backToMain()}}/>
@@ -54,7 +83,7 @@ render () {
         </section>
       </section>
     </section>}
-    {!this.state.loading && <section className='overview-section'>
+    {!this.state.loading && !this.state.error && <section className='overview-section'>
       <h2>{this.state.movie.tagline}</h2>
       <p>{this.state.movie.overview}</p>
       <section className='bottom-details'>
@@ -64,7 +93,7 @@ render () {
       </section>
     </section>}
     {this.props.videos.length > 0 && <section className='trailer-location'>
-    <iframe src={`https://www.youtube.com/embed/${this.props.videos[0].key}`}
+    <iframe ref={this.myRef} src={`https://www.youtube.com/embed/${this.findMovieTrailer()}`}
       frameBorder=''
       allow='autoplay; encrypted-media'
       allowFullScreen
