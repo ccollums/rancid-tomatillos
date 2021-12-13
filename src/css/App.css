@@ -2,6 +2,10 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+.main {
+  overflow: hidden;
+}
+
 .logo {
   height: 15%;
   width: 15%;
@@ -26,8 +30,6 @@
 
 html {
   background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 30%, hsla(230, 95%, 36%, 1) 100%);
-  /* background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 19%, hsla(285, 95%, 36%, 1) 100%); */
-  /* background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 19%, hsla(285, 96%, 50%, 1) 100%); */
   background-attachment: fixed;
 }
 
@@ -51,7 +53,6 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* margin: 1em 0 1em 0 */
 }
 
 .sad-cloud {
