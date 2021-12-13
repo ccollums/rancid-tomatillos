@@ -1,31 +1,29 @@
 
 # Rancid Tomatillos
+
 Mod3 2108 FE
-
-
 
 ## Table of Contents
   - [Install + Setup](#set-up)  
+  - [Project Specs](#project-specs)
   - [Abstract](#abstract)
   - [Architecture](#architecture)
   - [Technologies](#technologies)
   - [Contributors](#contributors)
+  - [Artists](#artists)
   - [Wins](#wins)
   - [Challenges + Improvements](#challenges-+-Improvements)
-  - [Project Specs](#project-specs)
 
 ## Install + Setup
 
-  - clone this repo: [here](https://github.com/ccollums/rancid-tomatillos)
+   - Clone this repo: [here](https://github.com/ccollums/rancid-tomatillos)
    - On the command line, type: **$ npm install**
    - On the command line, type: **$ npm start**
    - Visit http://localhost:3000/ in the browser
-   - 
+   
 ## Project Specs
    - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
   
-
-
 ## Abstract
 
   ![dashboard](https://media.giphy.com/media/UCuIYdZnkTX1SFwQa7/giphy.gif)
@@ -81,5 +79,8 @@ Play Button by Mike Rowe from NounProject.com
 ## Challenges + Improvements
   - The team initially faced challenges refactoring the code to work with Router. We essentially had to rewire the entire application to work dynamically through pathing.
   - The app initially had a lot of timing errors. We discovered a need to add properties to our state that assisted with timing errors. 
-  - We plan to improve the UX further by implementing more responsive resizable CSS properties. 
+  
+  - We plan to improve the UX further by making the page more responsive with resizing.
+  - We also plan on adding a favoriting option
+  - In our next iteration we would also like to add more functionality to the search option, such as typing in specific genres.
 
