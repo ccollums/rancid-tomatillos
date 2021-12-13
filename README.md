@@ -4,60 +4,30 @@
 Mod3 2108 FE
 
 ## Table of Contents
-  - [Install + Setup](#set-up)  
+  - [Installation + Setup](#set-up)  
+  - [Contributors](#contributors)
+  - [Technologies](#technologies)
   - [Project Specs](#project-specs)
   - [Abstract](#abstract)
   - [Architecture](#architecture)
-  - [Technologies](#technologies)
-  - [Contributors](#contributors)
   - [Artists](#artists)
   - [Wins](#wins)
   - [Challenges + Improvements](#challenges-+-Improvements)
 
-## Install + Setup
+## Installation + Setup
 
-   - Clone this repo: [here](https://github.com/ccollums/rancid-tomatillos)
+   - Clone this repo down to your local machine: [here](https://github.com/ccollums/rancid-tomatillos)
    - On the command line, type: **$ npm install**
    - On the command line, type: **$ npm start**
-   - Visit http://localhost:3000/ in the browser
-   
-## Project Specs
-   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
-  
-## Abstract
-<p align="center">
-<img src="https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif" width="900">
-</p>
+   - Visit http://localhost:3000/ in the browser.
 
-  This project is designed as a dashboard app that allows users to learn more about popular movies. Upon page load, movie posters are displayed that a user can click on to learn more about that movie. 
-  
-<p align="center">
-<img src="https://media.giphy.com/media/CMzHYb4mI7bXzbDULJ/giphy.gif" width="900" align="center">
-</p>
-  
-  If the user clicks on a movie poster a preview is displayed. This preview provides information about the movie including the runtime, genre(s), tagline, overview, release date, budget, and revenue. The preview also has a "Watch Trailer" button that if clicked will load a preview from Youtube onto the page. Also shown is an "x" button that closes the preview and returns to the home page. 
-  
-  
-<p align="center"> 
-<img src="https://media.giphy.com/media/6UaL74M7EyCe3P73Dr/giphy.gif" width="900" align="center">
-</p>
-  
- A search bar allows the user to find a movie by the title. If the search bar is emptied, the dashboard will be displayed again.
- 
- <p align="center">
- <img src="https://media.giphy.com/media/nFVycfHtE8Yw3gCVh1/giphy.gif" width="900" align="center">
- </p>
-
-  The app includes a loading screen that is displayed during page loading and also can display an error message for server / url issues. 
-
-  The goals of the project were to gain competency with React fundamentals, learn to test React components and asynchronous Javascript, and create a multi-page UX using Router. 
-  
-## Architecture
-  Our version of the Rancid Tomatillos project pulls all of its data from a third party API provided by our instructors. On page load, we perform a fetch call and set the state of our main class component. Once the state is set the movie-posters are loaded to the DOM with dynamically created routes using movie specific IDs. If a user clicks on a movie-poster another fetch call is made that obtains more information about a specific movie to load onto the preview. 
+## Contributors
+  - [Carly Collums](https://github.com/ccollums)
+  - [David Tran](https://github.com/isleofyou)
 
 ## Technologies
   - Javascript
-  - CSS HTML
+  - CSS / HTML
   - Atom / VSCode
   - Git Version Control / GitHub
   - Webpack node package
@@ -67,9 +37,42 @@ Mod3 2108 FE
   - Mac OS Terminal/Command Line
   - Cypress
 
-## Contributors
-  - [Carly Collums](https://github.com/ccollums)
-  - [David Tran](https://github.com/isleofyou)
+   
+## Project Specs
+   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+  
+## Abstract
+
+This project is designed as a dashboard application that allows users to learn more about popular movies. Upon page load, a number of movie posters are displayed that a user can click on to see the details of that specific movie. A search bar on the main dashboard allows the user to find a movie by title. If the search bar is emptied, the dashboard will display all of the movies again. When the user clicks on a movie poster a preview is displayed. This preview provides information about the movie including the runtime, genre(s), tagline, overview, release date, budget, and revenue. The preview also has a "Watch Trailer" button that if clicked will load a preview embedded from Youtube to the bottom of the page. Also shown on this page is an "x" button that closes the preview and returns to the home page. The app includes a loading screen that is displayed during page load and also can display an error message for server / url issues. 
+
+The goals of this project were to gain competency with React fundamentals, learn to test React components and asynchronous Javascript, and create a multi-page UX using Router. 
+ 
+# Main Dashboard 
+
+<p align="center">
+<img src="https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif" width="900">
+</p>
+  
+# Movie Details/Trailer
+
+<p align="center">
+<img src="https://media.giphy.com/media/CMzHYb4mI7bXzbDULJ/giphy.gif" width="900" align="center">
+</p>
+
+# X Button Functionality 
+<p align="center"> 
+<img src="https://media.giphy.com/media/6UaL74M7EyCe3P73Dr/giphy.gif" width="900" align="center">
+</p>
+
+# Search Bar Functionality 
+
+ <p align="center">
+ <img src="https://media.giphy.com/media/nFVycfHtE8Yw3gCVh1/giphy.gif" width="900" align="center">
+ </p>
+
+## Architecture
+  Our version of the Rancid Tomatillos project pulls all of its data from a third party API provided by our instructors. On page load, we perform a fetch call and set the state of our main class component. Once the state is set the movie-posters are loaded to the DOM with dynamically created routes using movie specific IDs. If a user clicks on a movie-poster another fetch call is made that obtains more information about a specific movie to load onto the preview. 
+
 
 ## Artists
 - Loader by Rohith M S from NounProject.com
