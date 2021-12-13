@@ -52,18 +52,21 @@
   left: 5vh;
   bottom: 0;
   right: 0;
+  max-height: 30vh;
 }
 
 .left-side-overlay {
   display: flex;
   flex-direction: column;
   margin-left: 3em;
+  max-height: 30vh;
 }
 
 .movie-details {
   display: flex;
   flex-direction: row;
   margin-top: 1em;
+  flex-wrap: wrap;
 }
 
 .movie-title,
@@ -73,7 +76,7 @@
 }
 
 .movie-title {
-  font-size: 5em;
+  font-size: 3em;
 }
 
 h2 {
@@ -104,12 +107,7 @@ h4 {
 
 .rating {
   font-size: 6em;
-  margin: 0.7em 0.1em 0 0;
-}
-
-.rating-section {
-  position: absolute;
-  margin-left: 80%;
+  margin: 0.7em 0.5em 0 0;
 }
 
 .play-button {
