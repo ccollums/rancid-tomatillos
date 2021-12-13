@@ -26,7 +26,7 @@ Mod3 2108 FE
   
 ## Abstract
 
-  ![dashboard](https://media.giphy.com/media/UCuIYdZnkTX1SFwQa7/giphy.gif)
+  ![dashboard](http://www.giphy.com/gifs/s5tat4wG3D2tsO6ySO)
 
   This project is designed as a dashboard app that allows users to learn more about popular movies. Upon page load, movie posters are displayed that a user can click on to learn more about that movie. 
   
