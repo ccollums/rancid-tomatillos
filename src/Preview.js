@@ -33,9 +33,7 @@ class Preview extends Component {
 
   componentDidUpdate = () => {
     if (this.props.videos.length > 0) {
-      console.log('hi')
       this.myRef.current.scrollIntoView({ behavior: 'smooth'})
-      // window.scrollTo(0, this.myRef.current.offsetTop);
     }
   }
 
