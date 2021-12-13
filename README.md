@@ -31,15 +31,22 @@ Mod3 2108 FE
 
   This project is designed as a dashboard app that allows users to learn more about popular movies. Upon page load, movie posters are displayed that a user can click on to learn more about that movie. 
   
+<p align="center">
 <img src="https://media.giphy.com/media/CMzHYb4mI7bXzbDULJ/giphy.gif" width="900" align="center">
+</p>
   
   If the user clicks on a movie poster a preview is displayed. This preview provides information about the movie including the runtime, genre(s), tagline, overview, release date, budget, and revenue. The preview also has a "Watch Trailer" button that if clicked will load a preview from Youtube onto the page. Also shown is an "x" button that closes the preview and returns to the home page. 
   
+  
+<p align="center"> 
 <img src="https://media.giphy.com/media/6UaL74M7EyCe3P73Dr/giphy.gif" width="900" align="center">
+</p>
   
  A search bar allows the user to find a movie by the title. If the search bar is emptied, the dashboard will be displayed again.
  
+ <p align="center">
  <img src="https://media.giphy.com/media/nFVycfHtE8Yw3gCVh1/giphy.gif" width="900" align="center">
+ </p>
 
   The app includes a loading screen that is displayed during page loading and also can display an error message for server / url issues. 
 
