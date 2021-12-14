@@ -39,15 +39,15 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        <Routes>
-          <Route path="/" element ={<Movies movies={this.state.movies} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount} />}/>
-          <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos} />}/>
-        </Routes>
         {this.state.error && 
         <section className='error'>
           <img className='sad-cloud' src={error} alt='a sad cloud because there is an error'/>
           <h2 className='error-message'>Oops, something went wrong. Please refresh your page!</h2>
         </section>}
+        <Routes>
+          {!this.state.error && <Route path="/" element ={<Movies movies={this.state.movies} searchMovies={this.searchMovies} componentDidMount={this.componentDidMount} />}/>}
+          <Route path="/:movieId" element={<PreviewFunction backToMain ={this.backToMain} playTrailer={this.playTrailer} videos={this.state.videos} />}/>
+        </Routes>
       </main>
     )
   }
