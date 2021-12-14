@@ -83,9 +83,11 @@ The goals of this project were to gain competency with React fundamentals, learn
 
 ## Responsive Layout
 
+<p align="center">
 <img width="300" alt="Screen Shot 2021-12-14 at 4 01 28 PM" src="https://user-images.githubusercontent.com/86894344/146093200-8977679b-c8d0-4b4b-8e06-9dd868d70368.png">
 
 <img width="300" alt="Screen Shot 2021-12-14 at 4 02 01 PM" src="https://user-images.githubusercontent.com/86894344/146093207-356ed004-e2f5-4efe-a372-421cfb48b779.png">
+</p>
 
 
 
