@@ -73,3 +73,26 @@ html {
 .title:hover {
   color: #cb137b;
 }
+
+@media screen and (max-width: 375px) {
+  .main {
+    align-items: center;
+  }
+
+  .form {
+    font-size: x-small;
+    margin-bottom: 20px;
+  }
+  .input {
+    height: 5em;
+  
+  }
+  .header {
+    justify-content: center;
+  
+  }
+  .title {
+    font-size: 34px;
+  
+  }
+}
