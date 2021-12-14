@@ -4,7 +4,8 @@
 Mod3 2108 FE -- This project is definitely not Rotten Tomatoes. Nor is it Netflix. Nor is it IMDB. It’s R A N C I D T O M A T I L L O S. Very different!
 
 ## Table of Contents
-  - [Installation + Setup](#set-up)  
+  - [Installation + Setup](#set-up)
+  - [Deployed Site](#deployed-site)  
   - [Contributors](#contributors)
   - [Technologies](#technologies)
   - [Project Specs](#project-specs)
@@ -20,6 +21,10 @@ Mod3 2108 FE -- This project is definitely not Rotten Tomatoes. Nor is it Netfli
    - On the command line, type: **$ npm install**
    - On the command line, type: **$ npm start**
    - Visit http://localhost:3000/ in the browser.
+
+## Deployed Site 
+
+[Click Here!](https://ccollums.github.io/rancid-tomatillos/)
 
 ## Contributors
   - [Carly Collums](https://github.com/ccollums)
