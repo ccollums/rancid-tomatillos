@@ -47,28 +47,36 @@ This project is designed as a dashboard application that allows users to learn m
 
 The goals of this project were to gain competency with React fundamentals, learn to test React components and asynchronous Javascript, and create a multi-page UX using Router. 
  
-# Main Dashboard 
+## Main Dashboard 
 
 <p align="center">
 <img src="https://media.giphy.com/media/s5tat4wG3D2tsO6ySO/giphy.gif" width="900">
 </p>
   
-# Movie Details/Trailer
+## Movie Details/Trailer
 
 <p align="center">
 <img src="https://media.giphy.com/media/CMzHYb4mI7bXzbDULJ/giphy.gif" width="900" align="center">
 </p>
 
-# X Button Functionality 
+## X Button Functionality 
 <p align="center"> 
 <img src="https://media.giphy.com/media/6UaL74M7EyCe3P73Dr/giphy.gif" width="900" align="center">
 </p>
 
-# Search Bar Functionality 
+## Search Bar Functionality 
 
  <p align="center">
  <img src="https://media.giphy.com/media/nFVycfHtE8Yw3gCVh1/giphy.gif" width="900" align="center">
  </p>
+ 
+## Error Handling 
+
+<p align="center">
+<img width="900" alt="Screen Shot 2021-12-13 at 5 05 30 PM" src="https://user-images.githubusercontent.com/86894344/145908857-7ac00218-9971-42b0-826f-edec5d6f5a4e.png">
+</p>
+
+
 
 ## Architecture
   Our version of the Rancid Tomatillos project pulls all of its data from a third party API provided by our instructors. On page load, we perform a fetch call and set the state of our main class component. Once the state is set the movie-posters are loaded to the DOM with dynamically created routes using movie specific IDs. If a user clicks on a movie-poster another fetch call is made that obtains more information about a specific movie to load onto the preview. 
