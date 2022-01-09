@@ -11,4 +11,11 @@
   color: white;
 }
 
+@media screen and (max-width:375px) {
+  .movies-container {
+    justify-content: center;
+
+  }
+}
+
 
