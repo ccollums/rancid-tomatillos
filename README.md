@@ -26,10 +26,6 @@ Mod3 2108 FE -- This project is definitely not Rotten Tomatoes. Nor is it Netfli
 
 [Click Here!](https://ccollums.github.io/rancid-tomatillos/)
 
-## Contributors
-  - [Carly Collums](https://github.com/ccollums)
-  - [David Tran](https://github.com/isleofyou)
-
 ## Technologies
   - Javascript
   - CSS / HTML
