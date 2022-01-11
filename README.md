@@ -6,7 +6,6 @@ Mod3 2108 FE -- This project is definitely not Rotten Tomatoes. Nor is it Netfli
 ## Table of Contents
   - [Installation + Setup](#set-up)
   - [Deployed Site](#deployed-site)  
-  - [Contributors](#contributors)
   - [Technologies](#technologies)
   - [Project Specs](#project-specs)
   - [Abstract](#abstract)
@@ -14,6 +13,7 @@ Mod3 2108 FE -- This project is definitely not Rotten Tomatoes. Nor is it Netfli
   - [Artists](#artists)
   - [Wins](#wins)
   - [Challenges + Improvements](#challenges-+-Improvements)
+  - [Authors](#Authors)
 
 ## Installation + Setup
 
@@ -115,4 +115,18 @@ The goals of this project were to gain competency with React fundamentals, learn
   - We plan to improve the UX further by making the page more responsive with resizing.
   - We also plan on adding a favoriting option
   - In our next iteration we would also like to add more functionality to the search option, such as typing in specific genres.
+
+## Authors
+
+<table>
+    <tr>
+        <td> Carly Collums <a href="https://github.com/ccollums">GH</td>
+        <td> David Tran <a href="https://github.com/isleofyou">GH</td>
+    </tr>
+<td><img src="https://avatars.githubusercontent.com/u/86894344?v=4" alt="Carly Collums"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/60856601?v=4" alt="David Tran"
+ width="150" height="auto" /></td>
+</table>
+  
 
