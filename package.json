@@ -15,15 +15,14 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "my-server -p 3000",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3000 cy:run",
-    "eject": "react-scripts eject",
-    "cypress": "./node_modules/.bin/cypress open"
+    "start": "react-scripts start",
+    "test" : "jest --forceExit",
+    "test:watch": "jest --watchAll"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
