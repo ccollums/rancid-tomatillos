@@ -29,12 +29,12 @@ describe('Rancid Tomatillos', () => {
       .should('have.length', 1)
   });
 
-  it('should display an error message if the incorrect URL is used', () => {
+  it.skip('should display an error message if the incorrect URL is used', () => {
     cy.visit('http://localhost:3000/2')
       .get('.error-message')
   });
 
-  it('should display an error message if there is a server error', () => {
+  it.skip('should display an error message if there is a server error', () => {
     cy.visit('http://localhost:3000/1')
       .get('.error-message')
   });
