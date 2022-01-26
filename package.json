@@ -15,12 +15,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "start": "react-scripts start",
-    "test" : "jest --forceExit",
-    "test:watch": "jest --watchAll"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "cypress": "./node_modules/.bin/cypress open"
   },
 
   "eslintConfig": {
@@ -43,7 +44,6 @@
   },
   "devDependencies": {
     "cypress": "^9.1.1",
-    "gh-pages": "^3.2.3",
-    "start-server-and-test": "^1.14.0"
+    "gh-pages": "^3.2.3"
   }
 }
