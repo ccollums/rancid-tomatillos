@@ -3,7 +3,7 @@ describe('Rancid Tomatillos', () => {
     cy.visit('http://localhost:3000/337401');
   });
 
-  it('should be able to visit the details page of a movie and see the movies details', () => {
+  it.skip('should be able to visit the details page of a movie and see the movies details', () => {
     cy.contains('Mulan')
     cy.contains('5/10')
     cy.contains('115 min')
@@ -18,25 +18,25 @@ describe('Rancid Tomatillos', () => {
     cy.contains('Watch Trailer')
   });
 
-  it('should be able to click the play icon and the embedded youtube video will pop up on the page', () => {
+  it.skip('should be able to click the play icon and the embedded youtube video will pop up on the page', () => {
     cy.get('.play-button').click()
     .get('.trailer-location')
     .get('iframe')
   });
 
-  it("should be able to go back to the main dashboard when the x icon is clicked", () => {
+  it.skip("should be able to go back to the main dashboard when the x icon is clicked", () => {
     cy.visit('http://localhost:3000/337401')
       .get('.x-icon').click()
       .get('.movie-poster')
       .should('have.length', 40)
   });
 
-  it('should show an error message if there is a server error', () => {
+  it.skip('should show an error message if there is a server error', () => {
     cy.visit('http://localhost:3000/33740')
     .get('.error-message')
   });
 
-  it("should show an error if the user goes to the wrong URL", () => {
+  it.skip("should show an error if the user goes to the wrong URL", () => {
     cy.visit('http://localhost:3000/33740')
     .get('.error-message')
   });
