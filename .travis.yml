@@ -1,9 +1,5 @@
 language: node_js
 node_js:
-  - "node"
-<<<<<<< HEAD
-  notifications:
-=======
+  - “16”
 notifications:
->>>>>>> 8baf993f335685d25a2c3877d54baa9fe399c95f
   email: false
